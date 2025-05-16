@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab 2 – Cat Selector App</title>
+
+  <!-- Connects the external JavaScript file that contains the logic -->
+  <!-- The 'defer' attribute makes sure the JS loads after HTML -->
+  <script src="lab2.js" defer></script>
+
+  <!-- Basic CSS styling for layout, readability, and usability -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    button, input[type="number"], label {
+      margin: 6px 6px 12px 0;
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+
+    #results {
+      margin-top: 20px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      background-color: #f4f4f4;
+      white-space: pre-wrap; /* Maintains spacing and new lines in displayed text */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Page heading -->
+  <h1>Cat Selector App – Lab 2</h1>
+
+  <!-- 
+    BUTTON 1: Show all breed names.
+    This button calls a JS function that lists all cat names.
+  -->
+  <button onclick="showAllNames()">All Names</button><br>
+
+  <!-- 
+    INPUT + BUTTON 2: Filter by health issues.
+    User enters a number. When they click "Filter", it shows only cats with that number of health issues.
+  -->
+  <input id="healthInput" type="number" placeholder="Health Issues" />
+  <button onclick="filterByHealth()">Filter</button><br>
+
+  <!-- 
+    RADIO + BUTTON 3: Show cat weights.
+    User selects the weight unit (imperial or metric), then clicks "Weight" to see weights of all cats.
+  -->
+  <label>
+    <input type="radio" name="unit" value="imperial" checked> Imperial
+  </label>
+  <label>
+    <input type="radio" name="unit" value="metric"> Metric
+  </label>
+  <button onclick="showWeights()">Weight</button><br>
+
+  <!-- 
+    BUTTON 4: Intelligence and Friendliness.
+    Displays intelligence and child_friendly ratings side-by-side for all cats.
+  -->
+  <button onclick="showIntelligenceFriendly()">Intelligence - Friendly</button><br>
+
+  <!-- 
+    BUTTON 5: Average Intelligence.
+    Calculates and shows the average intelligence score of all cats.
+  -->
+  <button onclick="showAverageIntelligence()">Average Intelligence</button><br>
+
+  <!-- 
+    BUTTON 6: Average Intelligence (Child Friendly = 4).
+    Filters cats where child_friendly = 4, then shows the average intelligence.
+  -->
+  <button onclick="showAvgIntelligenceChildFriendly()">Average Intelligence for Child Friendly = 4</button><br>
+
+  <!-- 
+    OUTPUT AREA:
+    All results from JavaScript functions will be displayed inside this div.
+    This is dynamically updated by the JS file using textContent.
+  -->
+  <div id="results">Results will appear here.</div>
+
+</body>
+</html>
+
